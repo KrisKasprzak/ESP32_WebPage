@@ -7,4 +7,4 @@ You will need an ESP32 and some open source libraries.
 <br>
 <br>
 
-![header image](https://raw.github.com/KrisKasprzak/ESP_WebPage/screen.jpg)
+![header image](https://raw.github.com/KrisKasprzak/ESP_WebPage/Master/screen.jpg)
