@@ -237,8 +237,7 @@ void UpdateSlider() {
   FanRPM = map(FanSpeed, 0, 255, 0, 2400);
   strcpy(buf, "");
   sprintf(buf, "%d", FanRPM);
-  sprintf(buf, buf);
-
+  
   // now send it back
   server.send(200, "text/plain", buf); //Send web page
 
