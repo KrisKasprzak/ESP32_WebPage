@@ -12,7 +12,8 @@ The ESP32 web libraries have a default max size of a String set to 64K. For smal
 2. minimize variable name lenghts consider changing ColorForForeground to FColor for example
 3. remove blank lines
 
-If your page still exceeds 64K, increase the buffer size, to increase the page size edit the parameter in:
+If your page still exceeds 64K, increase the buffer size, , do a Serial.println(sizeof(XML)); to see what you need.
+to increase the page size edit the parameter in:
 <br>
 C:\Users\Administrator\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\cores\esp32\WString.h
 <br>
@@ -20,7 +21,7 @@ around line 335 change
 <br>
 //CAPACITY_MAX = 65535
 <br>
-CAPACITY_MAX =80000 (80K is just and example, do a Serial.println(sizeof(XML)); to see what you need)
+CAPACITY_MAX =80000 (80K is just and example
 
 
 
