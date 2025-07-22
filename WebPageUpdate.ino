@@ -314,8 +314,7 @@ Serial.print("Button 1 "); Serial.println(LED0);
 void SendWebsite() {
 
   Serial.println("sending web page");
-  // you may have to play with this value, big pages need more porcessing time, and hence
-  // a longer timeout that 200 ms
+
   server.send(200, "text/html", PAGE_MAIN);
 
 }
