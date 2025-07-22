@@ -116,9 +116,11 @@ void setup() {
   digitalWrite(PIN_LED, LED0);
 
   // configure LED PWM functionalitites
+  /* old ESP compiler
   ledcSetup(0, 10000, 8);
   ledcAttachPin(PIN_FAN, 0);
   ledcWrite(0, FanSpeed);
+  */
 
   // if your web page or XML are large, you may not get a call back from the web page
   // and the ESP will think something has locked up and reboot the ESP
@@ -210,14 +212,18 @@ void loop() {
 // and control the fan speed
 void UpdateSlider() {
 
-  // many I hate strings, but wifi lib uses them...
+  // man I hate strings, but wifi lib uses them...
   String t_state = server.arg("VALUE");
 
   // conver the string sent from the web page to an int
   FanSpeed = t_state.toInt();
   Serial.print("UpdateSlider"); Serial.println(FanSpeed);
   // now set the PWM duty cycle
-  ledcWrite(0, FanSpeed);
+  // old ESP compiler
+  // ledcWrite(0, FanSpeed);
+
+  // latest ESP compiler
+  analogWrite(PIN_FAN, FanSpeed);
 
 
   // YOU MUST SEND SOMETHING BACK TO THE WEB PAGE--BASICALLY TO KEEP IT LIVE
