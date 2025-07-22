@@ -13,10 +13,14 @@ The ESP32 web libraries have a default max size of a String set to 64K. For smal
 3. remove blank lines
 
 If your page still exceeds 64K, increase the buffer size, to increase the page size edit the parameter in:
+<br>
 C:\Users\Administrator\AppData\Local\Arduino15\packages\esp32\hardware\esp32\3.0.2\cores\esp32\WString.h
+<br>
 around line 335 change
+<br>
 //CAPACITY_MAX = 65535
-CAPACITY_MAX =80000 (80K is just and example, do a Serial.println(sizeof(webpage)); to see what you need)
+<br>
+CAPACITY_MAX =80000 (80K is just and example, do a Serial.println(sizeof(XML)); to see what you need)
 
 
 
