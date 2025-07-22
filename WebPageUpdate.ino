@@ -122,12 +122,9 @@ void setup() {
 
   // if your web page or XML are large, you may not get a call back from the web page
   // and the ESP will think something has locked up and reboot the ESP
-  // not sure I like this feature, actually I kinda hate it
-  // disable watch dog timer 0
-  disableCore0WDT();
-
-  // maybe disable watch dog timer 1 if needed
-  //  disableCore1WDT();
+  // you may consider disabling the watch dog timers
+  // disableCore0WDT();
+  // disableCore1WDT();
 
   // just an update to progress
   Serial.println("starting server");
